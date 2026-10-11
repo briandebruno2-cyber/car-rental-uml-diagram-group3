@@ -8,4 +8,4 @@
 ## Group 3 Members
 
 - Brian, Kipkurui Koech
-  
+- Eze, Miracle Izuchukwu
