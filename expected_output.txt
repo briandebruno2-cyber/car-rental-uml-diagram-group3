@@ -1,0 +1,78 @@
+
+================================================================
+1. SETUP: branch, staff and vehicles (aggregation)
+================================================================
+  EMP-001  Peter Otieno   role: Rental Agent
+  EMP-002  Grace Wanjiru  role: Manager
+  VEH-001 Sedan Toyota Axio (KDG 123X) - Available
+  VEH-002 SUV   Subaru Forester (KDH 456Y) - Available
+  VEH-003 Van   Toyota Hiace (KDJ 789Z) - Available
+
+================================================================
+2. INHERITANCE & POLYMORPHISM: calculate_rate() per vehicle type
+================================================================
+  Sedan 3 days = KES 15,000.00
+  SUV   3 days = KES 30,000.00
+  Van   3 days = KES 42,000.00
+  Sedan 7 days = KES 31,500.00   (10% weekly discount)
+
+================================================================
+3. CUSTOMER: register and make a booking
+================================================================
+  Contact info : John Kamau | 0733 333 333 | john@mail.com
+  Before registering -> John Kamau must register before making a booking
+  Registered   : 2026-10-30
+  BKG-001 status: Pending, days: 3, total: KES 30,000.00
+  After confirm -> booking: Confirmed, vehicle: Reserved
+  Available vehicles now: ['KDG 123X', 'KDJ 789Z']
+
+================================================================
+4. RENTAL AGREEMENT: pickup with insurance and a manager discount
+================================================================
+  Agreement Open; booking: Active; vehicle: Rented
+  Manager approved a 10% discount
+  Total due so far: KES 31,500.00
+  Deposit KES 10,000.00 via M-Pesa: Completed
+
+================================================================
+5. RETURN: one day late, late fee and final payment (composition)
+================================================================
+  Late fee      : KES 12,000.00
+  Total due     : KES 43,500.00
+  Balance due   : KES 33,500.00
+  Final payment KES 33,500.00 via Card: Completed
+  Balance after : KES 0.00
+  Agreement: Closed; booking: Completed; vehicle: Available
+  Payments on this agreement: 2
+
+================================================================
+6. MAINTENANCE: the vehicle owns its records (composition)
+================================================================
+  MNT-001: Oil change and brake check -> Scheduled; van is Maintenance
+  After service -> record: Completed; van is Available
+  Records on van: 1
+
+================================================================
+7. BRANCH REPORT AND CUSTOMER HISTORY
+================================================================
+Report for Nairobi CBD (Kenyatta Avenue, Nairobi)
+  Vehicles : 3 (Available: 3)
+  Employees: 2
+  Rental history for John Kamau
+    BKG-001 KDH 456Y 2026-11-02 -> 2026-11-05 [Completed]
+
+================================================================
+8. RULES FROM THE DIAGRAM ARE ENFORCED
+================================================================
+  [OK]   Create an abstract Person
+         -> Person is abstract and cannot be instantiated directly
+  [OK]   Create an abstract Vehicle
+         -> Can't instantiate abstract class Vehicle without an implementation for abstract method 'calculate_rate'
+  [OK]   Book a vehicle that is already reserved
+         -> KDG 123X is not available (Reserved)
+  [OK]   Give one booking a second agreement
+         -> This booking already has a rental agreement
+  [OK]   Return date before pickup date
+         -> Return date must be after the pickup date
+
+Demo finished: all classes from the UML diagram ran successfully.
