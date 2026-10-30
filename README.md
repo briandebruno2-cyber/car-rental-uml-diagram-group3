@@ -1,6 +1,11 @@
 # Car Rental Management System – Group 3 (OOP I: UML Class Implementation)
 
 Python implementation of the 15 classes in our UML class diagram (`diagram.drawio`).
+## UML Class Diagram
+
+<img src="CarRental_UML_ClassDiagram.png" alt="Car Rental UML Class Diagram" width="100%">
+
+[Open the editable diagram in Draw.io](https://app.diagrams.net/?url=https://raw.githubusercontent.com/briandebruno2-cyber/car-rental-uml-diagram-group3/main/diagram.drawio)
 
 ## How to run
 Requires Python 3.9 or newer. No extra packages.
